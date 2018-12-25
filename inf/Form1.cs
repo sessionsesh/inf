@@ -23,12 +23,6 @@ namespace inf
         List<string> arr = new List<string>();//Массив, в который  записываются символы в 16-ой системе
         private void button_Input_Click(object sender, EventArgs e)
         {
-            if (textBox_input.Text.Trim() == "")
-            {
-                MessageBox.Show("Поле ввода не может быть пустым", "Ошибка", MessageBoxButtons.OK,
-                        MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
-                return;
-            }
             for (int i = 0; i < textBox_input.Text.Length; i++)
             {
                 if (!((textBox_input.Text[i] >= 48 && textBox_input.Text[i] <= 57) || (textBox_input.Text[i] >= 65 && textBox_input.Text[i] <= 70) || (textBox_input.Text[i] >= 97 && textBox_input.Text[i] <= 102)))
@@ -37,6 +31,20 @@ namespace inf
                         MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                     return;
                 }
+            }
+
+
+            if (textBox_input.Text.Trim() == "")
+            {
+                MessageBox.Show("Поле ввода не может быть пустым", "Ошибка", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
+            }
+            if (textBox_input.Text.Length >= 17)
+            {
+                MessageBox.Show("Недопустимо большое число", "Ошибка", MessageBoxButtons.OK,
+                        MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
+                return;
             }
 
             numericUpDownForN.Enabled = false;
@@ -81,7 +89,7 @@ namespace inf
                 if (!bin.Contains("1"))
                     bin = bin0;
                 else
-                { 
+                {
                     while (hex[count] == 48)
                     {
                         bin = "0000" + bin;
@@ -104,12 +112,12 @@ namespace inf
                     {
                         bin = "0" + bin;
                     }
-                  
+
                 }
-   
+
                 for (int i = 0; i < bin.Length; i++)//разбивание двоичного числа на: знак, экспоненту и мантиссу
                 {
-                    if (i == 0) 
+                    if (i == 0)
                         sign += bin[i];//знак
                     if (i >= 1 && i <= 5)
                         exp += bin[i];//экспонента
@@ -118,7 +126,7 @@ namespace inf
                     if (i > 15)
                         break;
                 }
-                a = mant.Length;  
+                a = mant.Length;
                 while (exp.Length != 5)//добавление недостающих нулей к мантиссе
                 {
                     for (int i = 0; i < 5 - exp.Length; i++)
@@ -187,6 +195,3 @@ namespace inf
         }
     }
 }
-
-
-
