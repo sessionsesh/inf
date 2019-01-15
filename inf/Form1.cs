@@ -18,6 +18,7 @@ namespace inf
             InitializeComponent();
             label4.Text = "";
             numericUpDownForN.ReadOnly = true;
+            textBox1.ReadOnly = true;
         }
 
         List<string> arr = new List<string>();//Массив, в который  записываются символы в 16-ой системе
@@ -71,7 +72,7 @@ namespace inf
                         MessageBoxIcon.Error, MessageBoxDefaultButton.Button1);
                 return;
             }
-            string str = "Преобразование:";
+            string str = "";
             List<double> ar = new List<double>();
             foreach (string element in arr)
             {
@@ -172,7 +173,8 @@ namespace inf
             {
                 str += item + " ";
             }
-            label1.Text = str;
+            label1.Text = "Преобразование: "+ str;
+            textBox1.Text = str;
         }
 
         private void button1_Click(object sender, EventArgs e)

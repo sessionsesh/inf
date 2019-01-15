@@ -38,8 +38,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownForN)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -156,6 +157,15 @@
             this.groupBox1.Text = "Пользовательский ввод";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(151, 51);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(253, 13);
+            this.label5.TabIndex = 12;
+            this.label5.Text = "Допустимое количество вводимых символов 17";
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -166,20 +176,19 @@
             this.label4.TabIndex = 15;
             this.label4.Text = "label4";
             // 
-            // label5
+            // textBox1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(157, 51);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(253, 13);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "Допустимое количество вводимых символов 17";
+            this.textBox1.Location = new System.Drawing.Point(431, 60);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 16;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(967, 177);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -209,5 +218,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
